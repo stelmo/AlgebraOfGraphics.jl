@@ -1,6 +1,7 @@
 module AlgebraOfGraphics
 
 using Base: front, tail
+import Base.isequal, Base.isless
 using Dates
 using Tables: rows, columns, getcolumn, columnnames, columntable
 using StructArrays: StructArrays, components, uniquesorted, GroupPerm, StructArray

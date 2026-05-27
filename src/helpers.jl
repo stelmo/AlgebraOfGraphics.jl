@@ -29,6 +29,9 @@ Base.:(==)(s1::Sorted, s2::Sorted) = isequal(s1.idx, s2.idx) && isequal(s1.value
 Base.print(io::IO, s::Sorted) = print(io, s.value)
 Base.isless(s1::Sorted, s2::Sorted) = isless((s1.idx, s1.value), (s2.idx, s2.value))
 
+Base.isless(a::Makie.RichText, b::Makie.RichText) = Base.isless(String(a), String(b))
+Base.isequal(a::Makie.RichText, b::Makie.RichText) = a == b
+
 struct Renamer{U, L}
     uniquevalues::U
     labels::L
